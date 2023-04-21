@@ -1,5 +1,5 @@
 const { Given, When, Then } = require("@badeball/cypress-cucumber-preprocessor")
-
+import { faker } from '@faker-js/faker'
 import { cadastroUsuario } from "../pages/cadastroUsuario"
 
 Given(/^que esteja na pagina de cadastro de usuario$/, () => {
@@ -7,9 +7,10 @@ Given(/^que esteja na pagina de cadastro de usuario$/, () => {
 })
 
 When(/^preenho os informção de cadastro$/, () => {
-    return true
+    cadastroUsuario.preencherFormulario(faker.internet.email(), faker.name.fullName(), '123456', '123456')
+    cadastroUsuario.btnCadastrar()
 })
 
 Then(/^deve exibir a msg de usuario cadastrada$/, () => {
-    return true
+    cadastroUsuario.validarModalText('foi criada com sucesso')
 })

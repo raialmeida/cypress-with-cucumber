@@ -1,12 +1,14 @@
 {
   "devDependencies": {
-    "eslint-plugin-cypress": "^2.13.2",
     "@cypress/grep": "^3.1.0",
-    "cypress": "^12.10.0"
+    "@faker-js/faker": "^7.6.0",
+    "cypress": "^12.10.0",
+    "eslint-plugin-cypress": "^2.13.2"
   },
   "scripts": {
     "lint": "eslint cypress/**/*.js",
-    "lint-fix": "npm run lint -- --fix"
+    "lint-fix": "npm run lint -- --fix",
+    "cy:open": "cypress open --e2e --browser chrome"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^16.0.3",

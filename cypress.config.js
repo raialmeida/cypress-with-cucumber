@@ -11,9 +11,14 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   e2e: {
+    env: {
+      omitFiltered: true,
+      filterSpecs: true
+    },
     baseUrl: "https://bugbank.netlify.app/",
     specPattern: "**/*.feature",
     video: false,
+    fixturesFolder: false,
     setupNodeEvents,
   },
 })

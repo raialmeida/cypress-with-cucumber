@@ -2,6 +2,6 @@ Feature: Cadastrar Usuário
 
     @smoke
     Scenario: Cadastrar novo usuário
-        Given que esteja na pagina de cadastro de usuario
-        When preenho os informção de cadastro
-        Then deve exibir a msg de usuario cadastrada
+        Given que esteja na página de cadastro de usuário
+        When preencho as informações de cadastro
+        Then deve exibir a mensagem de usuário cadastrado

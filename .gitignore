@@ -1,7 +1,7 @@
 # Node artifact files
 node_modules
 cypress/downloads
-screenshots/
+screenshots
 fixture
 allure-results
 allure-report

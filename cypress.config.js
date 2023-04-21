@@ -6,9 +6,8 @@ const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 async function setupNodeEvents(on, config) {
   await preprocessor.addCucumberPreprocessorPlugin(on, config)
   on("file:preprocessor", browserify.default(config))
-  allureWriter(on, config);
+  allureWriter(on, config)
   return config
-
 }
 
 module.exports = defineConfig({

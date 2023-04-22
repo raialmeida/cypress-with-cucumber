@@ -1,6 +1,6 @@
-const { Given, When, Then } = require("@badeball/cypress-cucumber-preprocessor")
+const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor')
 import { faker } from '@faker-js/faker'
-import { cadastroUsuario } from "../pages/cadastroUsuario"
+import { cadastroUsuario } from '../pages/cadastroUsuario'
 
 Given(/^que esteja na página de cadastro de usuário$/, () => {
     cadastroUsuario.btnRegistrar()

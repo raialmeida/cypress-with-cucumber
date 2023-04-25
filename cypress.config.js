@@ -16,7 +16,7 @@ module.exports = defineConfig({
             omitFiltered: true,
             filterSpecs: true
         },
-        baseUrl: 'https://bugbank.netlify.app/',
+        baseUrl: 'https://bugbank.netlify.app',
         specPattern: '**/*.feature',
         video: false,
         fixturesFolder: false,

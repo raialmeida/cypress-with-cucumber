@@ -5,8 +5,10 @@ class Transferencia {
             inputDigito: () => cy.get('input[type*="digit"]'),
             inputValor: () => cy.get('input[type*="transferValue"]'),
             inputDescricao: () => cy.get('input[type*="description"]'),
-            btnTransferir: () => cy.get('button[type*="submit"]')
-
+            btnTransferir: () => cy.get('button[type*="submit"]'),
+            btnVoltar: () => cy.get('#btnBack'),
+            saldoConta: () => cy.get('#textBalance > span'),
+            saldoExtrato: () => cy.get('#textBalanceAvailable')
         }
     }
 
@@ -19,6 +21,24 @@ class Transferencia {
 
     btnTransferir() {
         this.elements.btnTransferir().click()
+    }
+
+    btnVoltar() {
+        this.elements.btnVoltar().click()
+    }
+
+    validarSaldo(valor) {
+        this.elements.saldoConta().invoke('text').then((text) => {
+            const valorAtual = text.replace(/\s/g, '')
+            expect(valorAtual).to.equal(valor)
+        })
+    }
+
+    validarSaldoExtrato(valor) {
+        this.elements.saldoExtrato().invoke('text').then((text) => {
+            const valorAtual = text.replace(/\s/g, '')
+            expect(valorAtual).to.equal(valor)
+        })
     }
 }
 

@@ -1,12 +1,12 @@
 class CadastroUsuario {
     constructor() {
         this.elements = {
-            btnRegistrar: () => cy.get('.ihdmxA'),
-            inputEmail: () => cy.get(':nth-child(2) > .input__default'),
-            inputNome: () => cy.get(':nth-child(3) > .input__default'),
-            inputSenha: () => cy.get(':nth-child(4) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default'),
-            inputConfirmarSenha: () => cy.get(':nth-child(5) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default'),
-            btnCadastrar: () => cy.get('.styles__ContainerFormRegister-sc-7fhc7g-0 > .style__ContainerButton-sc-1wsixal-0'),
+            btnRegistrar: () => cy.get('button:contains("Registrar")'),
+            inputEmail: () => cy.get('input[name="email"]'),
+            inputNome: () => cy.get('input[name="name"]'),
+            inputSenha: () => cy.get('input[name="password"]'),
+            inputConfirmarSenha: () => cy.get('input[name="passwordConfirmation"]'),
+            btnCadastrar: () => cy.get('button:contains("Cadastrar")'),
             checkCriarSaldo: () => cy.get('#toggleAddBalance'),
             modalText: () => cy.get('#modalText'),
             btnCloseModal: () => cy.get('#btnCloseModal')
@@ -17,10 +17,10 @@ class CadastroUsuario {
         this.elements.btnRegistrar().click()
     }
 
-    preencherFormulario(email, nome, senha, confirmSenha) {
-        this.elements.inputEmail().type(email, { force: true })
+    preencherDadosConta(email, nome, senha, confirmSenha) {
+        this.elements.inputEmail().eq(1).type(email, { force: true })
         this.elements.inputNome().type(nome, { force: true })
-        this.elements.inputSenha().type(senha, { force: true })
+        this.elements.inputSenha().eq(1).type(senha, { force: true })
         this.elements.inputConfirmarSenha().type(confirmSenha, { force: true })
     }
 

@@ -1,6 +1,5 @@
 Feature: Cadastrar Usuário
 
-    @smoke
     Scenario: Cadastrar novo usuário
         Given que esteja na página de cadastro de usuário
         When preencho as informações de cadastro

@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@shelex/cypress-allure-plugin": "^2.38.3",
+    "cypress": "^12.10.0",
+    "eslint-plugin-cypress": "^2.13.2"
+  },
+  "scripts": {
+    "lint": "eslint cypress/**/*.js",
+    "lint-fix": "npm run lint -- --fix",
+    "cy:report": "cypress run -e allure=true",
+    "cy:open": "cypress open --e2e --browser chrome",
+    "cy:run": "cypress run --e2e --browser chrome"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
+    "@cypress/browserify-preprocessor": "^3.0.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/steps/*.js"
+  }
+}

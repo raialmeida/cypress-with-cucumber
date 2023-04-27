@@ -8,10 +8,10 @@ Informações básicas para realizar a instalação das tecnologias e configura�
 
 ## Dependências utilizado com cypress no projeto.
 
-+ [Allure Report](#https://github.com/Shelex/cypress-allure-plugin)
-+ [Cucumber](#https://github.com/badeball/cypress-cucumber-preprocessor)
-+ [Faker](#https://fakerjs.dev/)
-+ [Cypress ESLint Plugin](#https://github.com/cypress-io/eslint-plugin-cypress)
++ [Allure Report](https://github.com/Shelex/cypress-allure-plugin)
++ [Cucumber](https://github.com/badeball/cypress-cucumber-preprocessor)
++ [Faker](https://fakerjs.dev/)
++ [Cypress ESLint Plugin](https://github.com/cypress-io/eslint-plugin-cypress)
 
 ## Instalação do Gerenciado de Pacotes NodeJS.
 

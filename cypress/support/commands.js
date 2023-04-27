@@ -8,7 +8,7 @@ Cypress.Commands.add('login', (email, senha) => {
 })
 
 /**
- * Comando para realizar um cadastro de uma conta e salvar o numero da conta e digito na variavel gobal
+ * Comando para realizar um cadastro de uma conta e salvar o número da conta e digito na variavel global
  */
 Cypress.Commands.add('cadastro', (email, senha) => {
     cy.get('button:contains("Registrar")').click()

@@ -1,18 +1,10 @@
-class Home {
-    constructor() {
-        this.elements = {
-            btnTranferencia: () => cy.get('#btn-TRANSFERÊNCIA'),
-            btnExtrato: () => cy.get('#btn-EXTRATO')
-        }
-    }
+export const homePage = {
 
     btnTranferencia() {
-        this.elements.btnTranferencia().click()
-    }
+        cy.get('#btn-TRANSFERÊNCIA').click()
+    },
 
     btnExtrato() {
-        this.elements.btnExtrato().click()
+        cy.get('#btn-EXTRATO').click()
     }
 }
-
-export const homePage = new Home()

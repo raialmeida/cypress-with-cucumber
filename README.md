@@ -2,9 +2,11 @@
 
 Projeto: Automação front-end com cucumber
 
+OBS: Esse projeto tem o intuito de demostrar um projeto com cypress + cucumber e simplificando uso de PageObects. No entanto, pode haver algumas "Más praticas" por Exemplo: { force: true } devido a plataforma de testes.
+
 Informações básicas para realizar a instalação das tecnologias e configurações para automatizar os testes. 
 
-**Plataforma**: Click para consultar a plataforma [BugBank](https://bugbank.netlify.app/)
+**Plataforma**: Click para consultar a plataforma [BugBank](https://bugbank.netlify.app/) plataforma de transferência de valores.
 
 ## Dependências utilizado com cypress no projeto.
 

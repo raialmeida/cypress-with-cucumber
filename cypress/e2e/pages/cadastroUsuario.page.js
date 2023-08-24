@@ -1,41 +1,26 @@
-class CadastroUsuario {
-    constructor() {
-        this.elements = {
-            btnRegistrar: () => cy.get('button:contains("Registrar")'),
-            inputEmail: () => cy.get('input[name="email"]'),
-            inputNome: () => cy.get('input[name="name"]'),
-            inputSenha: () => cy.get('input[name="password"]'),
-            inputConfirmarSenha: () => cy.get('input[name="passwordConfirmation"]'),
-            btnCadastrar: () => cy.get('button:contains("Cadastrar")'),
-            checkCriarSaldo: () => cy.get('#toggleAddBalance'),
-            modalText: () => cy.get('#modalText'),
-            btnCloseModal: () => cy.get('#btnCloseModal')
-        }
-    }
+export const cadastroUsuario = {
 
     btnRegistrar() {
-        this.elements.btnRegistrar().click()
-    }
+        cy.get('button:contains("Registrar")').click()
+    },
 
     preencherDadosConta(email, nome, senha, confirmSenha) {
-        this.elements.inputEmail().eq(1).type(email, { force: true })
-        this.elements.inputNome().type(nome, { force: true })
-        this.elements.inputSenha().eq(1).type(senha, { force: true })
-        this.elements.inputConfirmarSenha().type(confirmSenha, { force: true })
-    }
+        cy.get('input[name="email"]').eq(1).type(email, { force: true })
+        cy.get('input[name="name"]').type(nome, { force: true })
+        cy.get('input[name="password"]').eq(1).type(senha, { force: true })
+        cy.get('input[name="passwordConfirmation"]').type(confirmSenha, { force: true })
+    },
 
     checkCriarSaldo() {
-        this.elements.checkCriarSaldo().click()
-    }
+        cy.get('#toggleAddBalance').click()
+    },
 
     btnCadastrar() {
-        this.elements.btnCadastrar().click({ force: true })
-    }
+        cy.get('button:contains("Cadastrar")').click({ force: true })
+    },
 
     validarModalText(texto) {
-        this.elements.modalText().should('contain.text', texto)
-        this.elements.btnCloseModal().click({ force: true })
+        cy.get('#modalText').should('contain.text', texto)
+        cy.get('#btnCloseModal').click({ force: true })
     }
 }
-
-export const cadastroUsuario = new CadastroUsuario()

@@ -1,14 +1,11 @@
 const { defineConfig } = require('cypress')
 const preprocessor = require('@badeball/cypress-cucumber-preprocessor')
 const browserify = require('@badeball/cypress-cucumber-preprocessor/browserify')
-const allureWriter = require('@shelex/cypress-allure-plugin/writer')
+const { allureCypress } = require("allure-cypress/reporter")
+const os = require('os')
 
 module.exports = defineConfig({
     e2e: {
-        env: {
-            omitFiltered: true,
-            filterSpecs: true
-        },
         baseUrl: 'https://bugbank.netlify.app',
         specPattern: '**/*.feature',
         video: false,
@@ -16,7 +13,15 @@ module.exports = defineConfig({
         setupNodeEvents: async function (on, config) {
             await preprocessor.addCucumberPreprocessorPlugin(on, config)
             on('file:preprocessor', browserify.default(config))
-            allureWriter(on, config)
+            allureCypress(on, {
+                environmentInfo: {
+                    OS: os.platform,
+                    OsVersion: os.version,
+                    Architecture: os.arch,
+                    NodeVersion: process.version,
+                    UrlAPI: config.baseUrl,
+                }
+            })
             return config
         }
     }
